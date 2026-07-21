@@ -1,4 +1,4 @@
-import { Document, model, Schema } from "mongoose";
+import { Document, model, Schema } from 'mongoose';
 
 const UserSchema = new Schema({
     age: Number,
@@ -18,4 +18,4 @@ export interface IUser extends Document {
     team: string;
 }
 
-export default model<IUser>("user", UserSchema);
+export default model<IUser>('user', UserSchema);

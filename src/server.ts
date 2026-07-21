@@ -1,20 +1,19 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import UserController from './controllers/UserController.js';
 
 const app = express();
 const port = 3000;
 
 // Database
-mongoose.connect(`${process.env.MONGO_URL}${process.env.MONGO_DB}`, { useNewUrlParser: true })
-  .then(() => console.log('Connected to database...'))
-  .catch(err => console.error(err));
+mongoose
+    .connect(`${process.env.MONGO_URL}${process.env.MONGO_DB}`)
+    .then(() => console.log('Connected to database...'))
+    .catch(err => console.error(err));
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Controllers
-import UserController from './controllers/UserController';
 
 // Routes
 app.post('/api/users', UserController.create);

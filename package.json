@@ -2,9 +2,11 @@
   "name": "user-manager",
   "version": "1.0.0",
   "description": "a RESTful API for a user management system",
-  "main": "server.ts",
+  "type": "module",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "nodemon dist/server.js",
+    "start": "node dist/server.js",
+    "dev": "nodemon dist/server.js",
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "eslint \"src/**/*.ts\" --fix"
   },
